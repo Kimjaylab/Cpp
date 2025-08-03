@@ -1,0 +1,33 @@
+void main(void)
+{
+CArray arr(5);
+
+for (int i = 0; i < arr.GetCount( ); i++)
+arr.SetValue(i, i + 1);
+
+arr.Print( );
+}
+
+#include<iostream>
+using namespace std;
+
+class CArray {
+private:
+int* parr;
+int count;
+
+public:
+CArray(int co) { count = co; parr = new int[count]; }
+~CArray( ) { delete[ ] parr; }
+
+int GetCount( ) { return count; }
+
+void SetValue(int index, int value) { parr[index] = value; }
+
+void Print( ) {
+cout << "{ ";
+for (int i = 0; i < count; i++)
+cout << parr[i] << " ";
+cout << "}" << endl;
+}
+};
