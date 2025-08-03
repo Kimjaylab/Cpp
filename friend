@@ -1,28 +1,40 @@
 #include<iostream>
 using namespace std;
 
+// 2차원 점(Point)을 나타내는 클래스
 class CPoint {
 private:
-int x;
-int y;
+    int x;  // x 좌표
+    int y;  // y 좌표
 public:
-CPoint(int a = 0, int b = 0) : x(a), y(b) { }
-void Print( ) { cout << "(" << x << ", " << y << ")" << endl; }
-friend CPoint Center(CPoint P1, CPoint P2);
+    // 생성자: 기본값 0,0 / 초기값으로 좌표 설정 가능
+    CPoint(int a = 0, int b = 0) : x(a), y(b) { }
+
+    // 좌표를 출력하는 멤버 함수
+    void Print() { 
+        cout << "(" << x << ", " << y << ")" << endl; 
+    }
+
+    // friend 함수로 선언해서 private 멤버 x, y에 접근 가능하게 함
+    friend CPoint Center(CPoint P1, CPoint P2);
 };
 
+// 두 점 P1, P2의 중간 점을 계산하는 함수 (friend 함수)
+// P1, P2의 x좌표와 y좌표 각각의 평균값을 새로운 점으로 반환
 CPoint Center(CPoint P1, CPoint P2)
 {
-CPoint Po;
-Po.x = (P1.x + P2.x) / 2;
-Po.y = (P1.y + P2.y) / 2;
-return Po;
+    CPoint Po;  // 반환할 중간 점 객체 생성
+    Po.x = (P1.x + P2.x) / 2;  // x 좌표 중간값 계산
+    Po.y = (P1.y + P2.y) / 2;  // y 좌표 중간값 계산
+    return Po;  // 중간 점 반환
 }
 
-void main(void)
+int main(void)
 {
-CPoint P1(1, 2);
-CPoint P2(3, 4);
-CPoint P3 = Center(P1, P2);
-P3.Print();
+    CPoint P1(1, 2);  // 좌표 (1,2)인 점 생성
+    CPoint P2(3, 4);  // 좌표 (3,4)인 점 생성
+    CPoint P3 = Center(P1, P2);  // P1과 P2의 중간 점 계산 후 P3에 저장
+    P3.Print();  // P3 좌표 출력
+    return 0;    // 정상 종료
 }
+
