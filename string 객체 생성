@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(void)
+{
+string str; //빈 문자열을 가진 string 객체
+string addr("Incheon SongDo"); //문자열 리터럴로 초기화
+
+string copyAddr(addr); //addr를 복사한 copyAddr 생성
+
+//C-스트링 (char [ ] 배열)으로부터 스트링 객체 생성
+char text[] = { 'l', 'o', 'v', 'e', ' ', 'c', '+', '+','\0' }; //C-스트링
+string title(text); //"love C++"을 가진 string 객체 생성
+
+//string객체의 문자열은 cout<<를 이용하여 화면에 출력
+cout << addr << endl; //"Incheon SongDo" 출력
+cout << title << endl; //“love C++" 출력
+
+return 0;
+}
