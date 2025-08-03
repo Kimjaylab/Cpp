@@ -1,0 +1,40 @@
+#include <iostream>
+#include <set>                   // multiset 사용을 위해 포함
+using namespace std;
+
+int main(void)
+{
+    multiset<int> ms;            // multiset 선언
+
+    ms.insert(9);                // 원소 9 삽입
+    ms.insert(13);               // 원소 13 삽입
+    ms.insert(5);                // 원소 5 삽입
+    ms.insert(7);                // 원소 7 삽입
+    ms.insert(3);                // 원소 3 삽입
+    ms.insert(1);                // 원소 1 삽입
+    ms.insert(11);               // 원소 11 삽입
+    ms.insert(15);               // 원소 15 삽입
+
+    multiset<int>::iterator iter;  // 반복자 선언
+
+    for (iter = ms.begin(); iter != ms.end(); iter++) {
+        cout << *iter << " ";    // multiset 원소 출력 (자동 정렬됨)
+    }
+
+    cout << endl;
+    cout << "ms.count(11) : " << ms.count(11) << endl << endl;  // 11의 개수 출력
+
+    // 원소 값 3, 11, 11 추가
+    ms.insert(3);                // 중복 허용된 3 삽입
+    ms.insert(11);               // 중복 허용된 11 삽입
+    ms.insert(11);               // 또다른 11 삽입
+
+    for (iter = ms.begin(); iter != ms.end(); iter++) {
+        cout << *iter << " ";    // 추가된 후의 원소 출력
+    }
+
+    cout << endl;
+    cout << "ms.count(11) : " << ms.count(11) << endl;  // 현재 11의 개수 출력
+
+    return 0;
+}
