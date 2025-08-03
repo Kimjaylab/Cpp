@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+struct Point {
+int x;
+int y;
+};
+Point sum(Point po1, Point po2)
+{
+Point po3;
+po3.x = po1.x + po2.x;
+po3.y = po1.y + po2.y;
+return po3;
+}
+void print(Point po)
+{
+cout << "(" << po.x << ", “ << po.y<< ")"<< endl;
+}
+
+int main(void)
+{
+Point p1 = { 1, 2 }; //선언 및 초기화
+Point p2 = { 3, 4 };
+Point p3;
+p3 = sum(p1, p2);
+print(p3);
+}
