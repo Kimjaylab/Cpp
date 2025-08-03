@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(void)
+{
+int a[10] = { 17, 25, 67, 84, 90, 30, 55, 6, 9, 28 };
+sort(a, a + 10);
+cout << "55: ";
+
+if (binarr_search(a, a + 10, 55))
+cout <<"find." << endl;
+
+else
+cout << "not find" << endl;
+cout << "80: ";
+
+if (binarr_search(a, a + 10, 80))
+cout << "find" << endl;
+
+else
+cout << "not find" << endl;
+
+return 0;
+}
