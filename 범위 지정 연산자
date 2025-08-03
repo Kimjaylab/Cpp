@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+namespace NamespaceA {
+int x;
+}
+int x;
+void main(void)
+{
+int x;
+x = 0; //main( )함수내에 있는 x
+::x = 1; //전역 네임스페이스에 있는 x
+NamespaceA::x = 2; //네임스페이스 A에 있는 x
+cout << NamespaceA::x << ‘ ‘ << ::x << ‘ ‘ << x << endl;
+}
