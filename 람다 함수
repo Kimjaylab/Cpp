@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+using namespace std;
+// 일반 함수 정의
+void sum(int a, int b)
+{
+cout << "sum( ) : " << a + b << endl;
+}
+int main(void)
+{
+//일반 함수 호출
+sum(10, 20);
+//람다 함수
+[ ](int a, int b)
+{
+cout << "lambda : " << a + b << endl;
+}(30, 40);
+return 0;
+}
