@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+template <typename T1, typename T2>
+
+void print(T1 a, T2 b)
+{
+cout << a << "," << b << endl;
+}
+
+void main(void)
+{
+print(10, "Hello");
+print(3.141592, 15.0f);
+print<const char*, double>("ABC", 2.5);
+}
