@@ -1,30 +1,33 @@
 #include <iostream>
-#include <utility>
-#include <string>
-#include <vector>
-#include <algorithm>
+#include <utility>                      // pair를 사용하기 위해 포함
+#include <string>                       // string 자료형 사용을 위해 포함
+#include <vector>                       // vector 컨테이너 사용을 위해 포함
+#include <algorithm>                    // sort 함수 사용을 위해 포함
 
-using namespace std;
+using namespace std;                    // std 네임스페이스 사용
 
 int main(void)
 {
-vector <pair<int, string> > v;
-v.push_back(pair<int, string>(3, "mit"));
-v.push_back(pair<int, string>(6, "coding"));
-v.push_back(pair<int, string>(1, "school"));
-v.push_back(pair<int, string>(4, "songdo"));
-v.push_back(pair<int, string>(2, "banana"));
-v.push_back(pair<int, string>(2, "apple"));
+    vector <pair<int, string> > v;     // int와 string으로 이루어진 pair를 담는 vector 선언
+    v.push_back(pair<int, string>(3, "mit"));       // (3, "mit") 추가
+    v.push_back(pair<int, string>(6, "coding"));    // (6, "coding") 추가
+    v.push_back(pair<int, string>(1, "school"));    // (1, "school") 추가
+    v.push_back(pair<int, string>(4, "songdo"));    // (4, "songdo") 추가
+    v.push_back(pair<int, string>(2, "banana"));    // (2, "banana") 추가
+    v.push_back(pair<int, string>(2, "apple"));     // (2, "apple") 추가
 
-cout <<"before" << endl;
-vector <pair<int, string> > ::iterator iter;
-for (iter = v.begin(); iter != v.end( ); iter++)
-cout << "[" << iter->first << "," << iter->second << "]" << endl;
-cout << endl;
-sort(v.begin(), v.end( ));
-cout <<"after" << endl;
+    cout << "before" << endl;          // 정렬 전 출력 시작 알림
 
-for (iter = v.begin( ); iter != v.end( ); iter++)
-cout << "[" << iter->first << "," << iter->second << "]" << endl;
-return 0;
+    vector <pair<int, string> >::iterator iter;     // 반복자 선언
+    for (iter = v.begin(); iter != v.end(); iter++) // 벡터 처음부터 끝까지 순회
+        cout << "[" << iter->first << "," << iter->second << "]" << endl;   // 각 pair 출력
+    cout << endl;                      // 출력 줄바꿈
+
+    sort(v.begin(), v.end());         // pair 기준으로 정렬 (first 기준, 같으면 second 기준)
+
+    cout << "after" << endl;          // 정렬 후 출력 시작 알림
+
+    for (iter = v.begin(); iter != v.end(); iter++) // 정렬된 벡터 출력
+        cout << "[" << iter->first << "," << iter->second << "]" << endl;   // 정렬 결과 출력
+    return 0;
 }
