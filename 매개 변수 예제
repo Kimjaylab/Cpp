@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+bool isEven(int num);
+void main(void)
+{
+cout << boolalpha;
+cout << "4 : " << isEven(4) << endl;
+cout << "101 : " << isEven(101) << endl;
+}
+
+bool isEven(int num)
+{
+bool retValue;
+retValue = (num % 2 == 0) ? true : false;
+return retValue;
+}
