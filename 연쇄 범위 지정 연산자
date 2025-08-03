@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+namespace NamespaceD {
+namespace NamespaceD1 {
+int x;
+}
+}
+namespace NamespaceE {
+class ClassE {
+public:
+class ClassE1 {
+public:
+int x;
+};
+};
+}
+void main(void)
+{
+NamespaceD::NamespaceD1::x = 6;
+NamespaceE::ClassE::ClassE1 e1;
+e1.x = 7;
+cout << NamespaceD::NamespaceD1::x << endl;
+cout << e1.x << endl;
+}
