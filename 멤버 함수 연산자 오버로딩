@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x, y;
+public:
+CPoint(int a = 0, int b = 0) : x(a), y(b) { }
+
+//함수 명만 변경되고 그 외는 Sum 함수와 동일
+CPoint operator+(const CPoint& Po) { return CPoint(x + Po.x, y + Po.y); }
+
+void Print( ) { cout << "(" << x << ", " << y << ")" << endl; }
+};
+
+void main(void)
+{
+CPoint P1(1, 1);
+CPoint P2(2, 2);
+
+CPoint P3 = P1 + P2; //P1.operator+(P2)
+
+P3.Print();
+}
