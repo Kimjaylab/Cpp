@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+//함수 템플릿 정의
+template <typename T>
+int sizeOf(T a)
+{
+return sizeof(a);
+}
+
+template<> //특수화
+int sizeOf(char* a)
+{
+return strlen(a);
+}
+
+int main(void)
+{
+int i = 10;
+double e = 7.7;
+char str[ ] = "Good morning!";
+
+cout << sizeOf(i) << endl;
+cout << sizeOf(e) << endl;
+cout << sizeOf(str) << endl;
+
+return 0;
+}
