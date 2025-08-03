@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x, y;
+public:
+CPoint(int a = 0, int b = 0) : x(a), y(b) { }
+friend CPoint operator+(const CPoint& Po1, const CPoint& Po2);
+void Print( ) { cout << "(" << x << ", " << y << ")" << endl; }
+};
+
+CPoint operator+(const CPoint& Po1, const CPoint& Po2)
+{
+return CPoint(Po1.x + Po2.x, Po1.y + Po2.y); //private 멤버에 대한 외부 접근
+}
+
+void main(void)
+{
+CPoint P1(1, 1);
+CPoint P2(2, 2);
+CPoint P3 = P1 + P2;
+
+P3.Print( );
+}
