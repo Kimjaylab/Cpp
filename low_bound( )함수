@@ -1,15 +1,18 @@
 #include <iostream>
-#include <algorithm>
+#include <algorithm>  // sort, lower_bound 함수 포함
 
 using namespace std;
 
 int main(void)
 {
-int a[10] = { 17, 25, 67, 84, 90, 30, 55, 6, 9, 28 };
-sort(a, a + 10);
+    int a[10] = { 17, 25, 67, 84, 90, 30, 55, 6, 9, 28 };
+    sort(a, a + 10);  // 배열 a를 오름차순으로 정렬
 
-cout << "lower bound 55: " << *lower_bound(a, a + 10, 55) << endl;
-cout << "lower bound 80: " << *lower_bound(a, a + 10, 80) << endl;
+    // lower_bound: 배열에서 값 55 이상인 첫 번째 위치의 요소를 가리키는 반복자 반환
+    cout << "lower bound 55: " << *lower_bound(a, a + 10, 55) << endl;
 
-return 0;
+    // lower_bound: 값 80 이상인 첫 번째 위치의 요소를 가리키는 반복자 반환
+    cout << "lower bound 80: " << *lower_bound(a, a + 10, 80) << endl;
+
+    return 0;
 }
