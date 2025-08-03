@@ -1,0 +1,20 @@
+#include <iostream>
+namespace A {
+int a;
+void add( ) {
+printf("A의 Add( ) 호출!\n");
+}
+}
+namespace B {
+void add( ) {
+printf("B의 Add( ) 호출!\n");
+}
+}
+int main(void)
+{
+A::add( );
+B::add( );
+A::a = 10;
+std::cout << A::a << std::endl;
+return 0;
+}
