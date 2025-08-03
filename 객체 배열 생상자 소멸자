@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x, y;
+
+public:
+CPoint(int a, int b) { x = a; y = b; cout << "contructor : "; Print( ); }
+~CPoint( ) { cout << " destructor : "; Print(); }
+void Print( ) { cout << "(" << x << ", " << y << ")" << endl; }
+};
+
+void main(void)
+{
+CPoint arr[5] = { CPoint(1, 1), CPoint(2, 2), CPoint(3, 3), CPoint(4, 4), CPoint(5, 5) };
+}
