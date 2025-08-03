@@ -1,0 +1,23 @@
+#include <iostream>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+bool gtr(int a, int b)
+{
+return a > b; //내림차순 정렬함수
+}
+
+int main(void)
+{
+int a[10] = { 1, 2, 4, 5, 3, 6, 8, 5, 7, 9 };
+
+sort(a, a + 10, gtr);
+
+for (int i = 0; i < 10; i++)
+cout << a[i] << ' ';
+cout << endl;
+
+return 0;
+}
