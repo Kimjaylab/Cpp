@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+enum class EnumA {
+First,
+Second,
+Third
+};
+void main(void)
+{
+EnumA enum_value = EnumA::First;
+//cout << enum_value << endl; -- 확인
+}
