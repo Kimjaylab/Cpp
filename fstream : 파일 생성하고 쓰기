@@ -1,0 +1,17 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main(void)
+{
+//파일 쓰기 준비
+ofstream out("test.txt");
+
+if (out.is_open( ))
+{
+out << "C++을 배우자~~";
+}
+return 0;
+}
