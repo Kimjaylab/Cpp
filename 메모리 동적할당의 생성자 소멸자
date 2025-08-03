@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+class CPoint {
+private:
+int x, y;
+public:
+CPoint( ) { x = 0; y = 0; cout << "contructor1" << endl; }
+CPoint(int a, int b) { x = a; y = b; cout << "contructor2" << endl; }
+~CPoint( ) { cout << "destructor" << endl; }
+};
+
+void main(void)
+{
+CPoint* po;
+po = new CPoint( ); //po = new CPoint 동일
+delete po;
+
+po = new CPoint(3, 4);
+delete po;
+}
