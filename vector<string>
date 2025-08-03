@@ -1,51 +1,51 @@
 #include<iostream>
-#include<vector>
-#include<string>
+#include<vector>                      // vector 사용을 위한 헤더
+#include<string>                      // string 사용을 위한 헤더
 
 using namespace std;
 
 int main(void)
 {
-vector<string> v;
+    vector<string> v;                // 문자열을 저장할 vector 선언
 
-v.push_back("MIT");
-v.push_back("Coding");
-v.push_back("School");
-v.push_back("Songdo");
-v.push_back("Incheon");
+    v.push_back("MIT");              // "MIT"를 벡터에 추가
+    v.push_back("Coding");          // "Coding"을 벡터에 추가
+    v.push_back("School");          // "School"을 벡터에 추가
+    v.push_back("Songdo");          // "Songdo"를 벡터에 추가
+    v.push_back("Incheon");         // "Incheon"을 벡터에 추가
 
-//v.front( ), v.back( )
-cout << "v.front( ) : " << v.front() << endl;
-cout << "v.end( ) : " << v.back() << endl;
-cout << endl;
+    // v.front( ), v.back( )
+    cout << "v.front( ) : " << v.front() << endl;    // 벡터의 첫 번째 요소 출력
+    cout << "v.end( ) : " << v.back() << endl;       // 벡터의 마지막 요소 출력
+    cout << endl;
 
-//v.popback( )
-cout << "v.popback( )" << endl;
-v.pop_back();
+    // v.popback( )
+    cout << "v.popback( )" << endl;     // pop_back 함수 호출을 알리는 출력
+    v.pop_back();                       // 벡터의 마지막 요소 제거
 
-vector<string> ::iterator iter;
-for (iter = v.begin(); iter != v.end(); iter++)
-{
-cout << *iter << " ";
-}
-cout << endl;
+    vector<string>::iterator iter;      // 벡터 순회를 위한 반복자 선언
+    for (iter = v.begin(); iter != v.end(); iter++)  // 벡터의 처음부터 끝까지 순회
+    {
+        cout << *iter << " ";           // 각 요소 출력
+    }
+    cout << endl;
 
-//v.erase(iter)
-cout << "v.erase(iter)" << endl;
-for (iter = v.begin(); iter != v.end(); iter++)
-{
-if (*iter == "School")
-{
-v.erase(iter);
-break;
-}
-}
+    // v.erase(iter)
+    cout << "v.erase(iter)" << endl;    // erase 함수 호출을 알리는 출력
+    for (iter = v.begin(); iter != v.end(); iter++)  // 벡터의 처음부터 끝까지 순회
+    {
+        if (*iter == "School")          // 현재 요소가 "School"일 경우
+        {
+            v.erase(iter);              // 해당 요소 제거
+            break;                      // 루프 종료
+        }
+    }
 
-for (iter = v.begin(); iter != v.end(); iter++)
-{
-cout << *iter << " ";
-}
-cout << endl;
+    for (iter = v.begin(); iter != v.end(); iter++)  // 변경된 벡터 출력
+    {
+        cout << *iter << " ";           // 각 요소 출력
+    }
+    cout << endl;
 
-return 0;
+    return 0;
 }
