@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+double getArea(double, double);
+double getArea(double);
+void main(void)
+{
+cout << "직사각형면적: "<< getArea(3, 4) << endl;
+cout << "원면적: " << getArea(5) << endl;
+}
+
+double getArea(double garo, double sero)
+{
+return (garo * sero);
+}
+double getArea(double radius)
+{
+return (3.14 * radius * radius);
+}
