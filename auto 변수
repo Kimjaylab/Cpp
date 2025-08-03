@@ -1,10 +1,13 @@
 #include <iostream>
 using namespace std;
+
 int main(void)
 {
-auto text = "auto variable"; //char const *형 변수 => 선언 동시 초기화
-cout << typeid(text).name( ) << endl;
-auto n = 10; //int형 변수
-cout << typeid(n).name( ) << endl;
-return 0;
+    auto text = "auto variable";  // auto 키워드 사용, "auto variable"은 문자열 리터럴로 const char* 타입
+    cout << typeid(text).name() << endl;  // text 변수의 타입 이름 출력 
+
+    auto n = 10;  // auto 키워드 사용, 정수 10으로 초기화 → int 타입 추론
+    cout << typeid(n).name() << endl;  // n 변수의 타입 이름 출력
+    return 0;  // 정상 종료
 }
+
