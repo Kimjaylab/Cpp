@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x;
+int y;
+
+public:
+void VerifyX(int a) {
+if (a < 1 || a > 10)
+cout << "x invailed!" << endl;
+else
+x = a;
+}
+};
+
+void main(void)
+{
+CPoint p; //클래스 변구 객체
+p.VerifyX(100);
+}
