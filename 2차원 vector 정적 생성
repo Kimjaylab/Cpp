@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<vector<int>> arr(6, vector<int>(5, 0));  // 6x5 배열 초기화
+
+int main(void)
+{
+    int value = 1;
+
+    // 값 채우기
+    for (int i = 0; i < 6; i++)
+        for (int j = 0; j < 5; j++)
+            arr[i][j] = value++;
+
+    // range-based for loop 출력
+    for (const auto& row : arr)
+    {
+        for (int n : row)
+            printf("%3d ", n);
+        cout << endl;
+    }
+
+    cout << endl;
+
+    // 인덱스 기반 출력
+    for (int i = 0; i < 6; i++)
+    {
+        for (int j = 0; j < 5; j++)
+            printf("%3d ", arr[i][j]);
+        cout << endl;
+    }
+
+    return 0;
+}
