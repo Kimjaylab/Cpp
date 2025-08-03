@@ -1,0 +1,24 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main(void)
+{
+    stack<int> st;                          // 정수를 저장하는 스택 선언
+    st.push(10);                            // 스택에 10 삽입
+    st.push(20);                            // 스택에 20 삽입
+    st.push(30);                            // 스택에 30 삽입
+    st.push(40);                            // 스택에 40 삽입
+    st.push(50);                            // 스택에 50 삽입
+
+    cout << "st.size( ) : " << st.size( ) << endl;     // 현재 스택의 크기 출력
+    cout << "st.top( ) -> st.pop( )" << endl;          // top과 pop 동작 확인 출력
+
+    while (!st.empty( ))                   // 스택이 비어있지 않으면 반복
+    {
+        cout << st.top( ) << endl;        // 스택의 top 요소 출력
+        st.pop( );                        // 스택의 top 요소 제거
+    }
+
+    return 0;
+}
