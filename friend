@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x;
+int y;
+public:
+CPoint(int a = 0, int b = 0) : x(a), y(b) { }
+void Print( ) { cout << "(" << x << ", " << y << ")" << endl; }
+friend CPoint Center(CPoint P1, CPoint P2);
+};
+
+CPoint Center(CPoint P1, CPoint P2)
+{
+CPoint Po;
+Po.x = (P1.x + P2.x) / 2;
+Po.y = (P1.y + P2.y) / 2;
+return Po;
+}
+
+void main(void)
+{
+CPoint P1(1, 2);
+CPoint P2(3, 4);
+CPoint P3 = Center(P1, P2);
+P3.Print();
+}
