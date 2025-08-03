@@ -1,0 +1,16 @@
+#include <iostream>
+namespace A {
+void add( ) {
+printf("A의 add( ) 호출!\n");
+}
+void minus( ) {
+printf("A의 minus() 호출!\n");
+}
+}
+using namespace A;
+int main(void)
+{
+add( );
+minus();
+return 0;
+}
