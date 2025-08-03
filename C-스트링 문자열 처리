@@ -1,22 +1,27 @@
-#include <iostream>
+#include <iostream>       
+#include <cstring>        
 
 using namespace std;
 
 int main(void)
 {
-char str1[255] = "C++ ";
-char str2[255] = "Programming";
-char str3[255];
+    char str1[255] = "C++ ";         // 문자열 "C++ "로 초기화된 문자 배열 str1 선언
+    char str2[255] = "Programming";  // 문자열 "Programming"으로 초기화된 문자 배열 str2 선언
+    char str3[255];                  // 빈 문자 배열 str3 선언 (나중에 복사용)
 
-strcat(str1, str2);
-strcpy(str3, str1);
-cout << "str1 : " << str1 << endl;
-cout << "str2 : " << str2 << endl;
-cout << "str3 : " << str3 << endl;
+    strcat(str1, str2);  // str1 뒤에 str2를 이어 붙임, 결과: "C++ Programming"
+    strcpy(str3, str1);  // str1의 문자열을 str3에 복사
 
-if (strcmp(str1, str3) == 0)
- cout << “str1 & str3 same"<< endl;
+    cout << "str1 : " << str1 << endl;  // str1 출력 ("C++ Programming")
+    cout << "str2 : " << str2 << endl;  // str2 출력 ("Programming")
+    cout << "str3 : " << str3 << endl;  // str3 출력 (str1과 동일 "C++ Programming")
 
-cout << "str1 length : " << strlen(str1) << endl;
-return 0;
+    // str1과 str3의 문자열 비교, 같으면 0 반환
+    if (strcmp(str1, str3) == 0)
+        cout << "str1 & str3 same" << endl;  // 같을 경우 출력
+
+    cout << "str1 length : " << strlen(str1) << endl;  // str1 문자열 길이 출력 (공백 포함)
+
+    return 0;   // 프로그램 정상 종료
 }
+
