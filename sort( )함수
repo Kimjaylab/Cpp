@@ -1,23 +1,25 @@
 #include <iostream>
-#include <iostream>
-#include <algorithm>
+#include <algorithm> // sort 함수 사용을 위한 헤더
 
 using namespace std;
 
+// 내림차순 정렬을 위한 비교 함수
 bool gtr(int a, int b)
 {
-return a > b; //내림차순 정렬함수
+    return a > b; // a가 b보다 크면 true를 반환 -> 내림차순 정렬 기준
 }
 
 int main(void)
 {
-int a[10] = { 1, 2, 4, 5, 3, 6, 8, 5, 7, 9 };
+    int a[10] = { 1, 2, 4, 5, 3, 6, 8, 5, 7, 9 };
 
-sort(a, a + 10, gtr);
+    // 배열 a를 내림차순으로 정렬, 세 번째 인자로 비교 함수 gtr 전달
+    sort(a, a + 10, gtr);
 
-for (int i = 0; i < 10; i++)
-cout << a[i] << ' ';
-cout << endl;
+    // 정렬된 배열 출력
+    for (int i = 0; i < 10; i++)
+        cout << a[i] << ' ';
+    cout << endl;
 
-return 0;
+    return 0;
 }
