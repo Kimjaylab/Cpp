@@ -1,0 +1,51 @@
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void)
+{
+vector<string> v;
+
+v.push_back("MIT");
+v.push_back("Coding");
+v.push_back("School");
+v.push_back("Songdo");
+v.push_back("Incheon");
+
+//v.front( ), v.back( )
+cout << "v.front( ) : " << v.front() << endl;
+cout << "v.end( ) : " << v.back() << endl;
+cout << endl;
+
+//v.popback( )
+cout << "v.popback( )" << endl;
+v.pop_back();
+
+vector<string> ::iterator iter;
+for (iter = v.begin(); iter != v.end(); iter++)
+{
+cout << *iter << " ";
+}
+cout << endl;
+
+//v.erase(iter)
+cout << "v.erase(iter)" << endl;
+for (iter = v.begin(); iter != v.end(); iter++)
+{
+if (*iter == "School")
+{
+v.erase(iter);
+break;
+}
+}
+
+for (iter = v.begin(); iter != v.end(); iter++)
+{
+cout << *iter << " ";
+}
+cout << endl;
+
+return 0;
+}
