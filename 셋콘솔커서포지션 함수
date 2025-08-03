@@ -1,0 +1,25 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+#include<windows.h>
+
+using namespace std;
+void GotoXY(int x, int y) //커서 위치 이동
+{
+COORD Pos = { x, y };
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
+
+void main(void)
+{
+int x, y;
+srand(time(NULL));
+while (1)
+{
+x = rand( ) % 80;
+y = rand( ) % 25;
+GotoXY(x, y);
+printf("*");
+Sleep(1000);
+}
+}
