@@ -1,0 +1,51 @@
+#include<iostream>
+#include<set>
+using namespace std;
+
+int main(void)
+{
+    set<int> s;                                  // 정수형 set 컨테이너 생성
+
+    s.insert(40);                                // 원소 삽입
+    s.insert(10);
+    s.insert(80);
+    s.insert(30);
+    s.insert(70);
+    s.insert(60);
+    s.insert(20);
+    s.insert(50);
+
+    set<int>::iterator iter;                     // 반복자 선언
+
+    for (iter = s.begin(); iter != s.end(); iter++) {
+        cout << *iter << " ";                    // set의 모든 원소 출력 (오름차순)
+    }
+
+    cout << endl;
+
+    s.insert(20);                                // 중복 값 삽입 (set은 중복 허용 안 함)
+
+    for (iter = s.begin(); iter != s.end(); iter++) {
+        cout << *iter << " ";                    // 중복 삽입해도 변화 없음
+    }
+
+    cout << endl;
+
+    iter = s.find(30);                           // 30이라는 원소 탐색
+
+    if (iter != s.end()) {
+        cout << *iter << " : 존재 " << endl;     // 찾으면 출력
+    } else {
+        cout << "존재하지 않음 " << endl;        // 못 찾으면 출력
+    }
+
+    iter = s.find(333);                          // 존재하지 않는 값 탐색
+
+    if (iter != s.end()) {
+        cout << *iter << " : 존재 " << endl;
+    } else {
+        cout << "존재하지 않음 " << endl;
+    }
+
+    return 0;
+}
