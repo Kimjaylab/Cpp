@@ -3,21 +3,23 @@
 
 using namespace std;
 
-void main(void)
+int main(void)  // void -> int로 변경하는 것이 표준에 맞음
 {
-string s1("test");
-string s2(s1);
-string s3;
-string s4(8, 'S’);
-string s5("very nice day", 8);
+    string s1("test");               // "test" 문자열로 초기화된 문자열 객체 s1 생성
+    string s2(s1);                  // s1을 복사하여 s2 생성
+    string s3;                     // 빈 문자열 객체 s3 생성
+    string s4(8, 'S');             // 문자 'S'를 8번 반복하여 문자열 생성 ("SSSSSSSS")
+    string s5("very nice day", 8); // "very nice day"의 앞 8글자만 복사하여 문자열 생성 ("very nic")
 
-const char* str = "abcdefghijklmnopqrstuvwxyz";
-string s6(str + 5, str + 10);
+    const char* str = "abcdefghijklmnopqrstuvwxyz"; // C 스타일 문자열 선언
+    string s6(str + 5, str + 10);  // str[5]부터 str[9]까지(5글자) 복사하여 문자열 생성 ("fghij")
 
-cout << "s1=" << s1 << endl;
-cout << "s2=" << s2 << endl;
-cout << "s3=" << s3 << endl;
-cout << "s4=" << s4 << endl;
-cout << "s5=" << s5 << endl;
-cout << "s6=" << s6 << endl;
+    cout << "s1=" << s1 << endl;   // s1 출력 -> test
+    cout << "s2=" << s2 << endl;   // s2 출력 -> test
+    cout << "s3=" << s3 << endl;   // s3 출력 -> 빈 문자열 (출력 안 됨)
+    cout << "s4=" << s4 << endl;   // s4 출력 -> SSSSSSSS
+    cout << "s5=" << s5 << endl;   // s5 출력 -> very nic
+    cout << "s6=" << s6 << endl;   // s6 출력 -> fghij
+
+    return 0;
 }
