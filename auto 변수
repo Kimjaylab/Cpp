@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main(void)
+{
+auto text = "auto variable"; //char const *형 변수 => 선언 동시 초기화
+cout << typeid(text).name( ) << endl;
+auto n = 10; //int형 변수
+cout << typeid(n).name( ) << endl;
+return 0;
+}
