@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+struct Point {
+int x;
+int y;
+};
+
+void move(Point& po1, Point po2)
+{
+po1.x = po1.x + po2.x;
+po1.y = po1.y + po2.y;
+}
+
+void print(Point po)
+{
+cout << "(" << po.x << ",
+“ << po.y<< ")"<< endl;
+}
+
+void main(void)
+{
+Point p1 = { 1, 1 };
+Point p2 = { 3, 4 };
+move(p1, p2);
+print(p1);
+}
