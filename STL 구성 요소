@@ -1,18 +1,28 @@
 #include <iostream>
 using namespace std;
 
+// Equal 클래스 정의
 class Equal {
 public:
-int operator( )(int a, int b)
-{
-return a == b;
-}
+    // 함수 호출 연산자 오버로딩: 두 정수를 받아서 같으면 1(true), 다르면 0(false) 반환
+    int operator()(int a, int b)
+    {
+        return a == b;
+    }
 };
 
-void main(void)
+int main(void)  // main 함수는 int 반환형이 기본
 {
-Equal cmp;
-cout << "equal(5, 5) : " << cmp(5, 5) << endl; //묵시적 호출
-cout << "cmp.operator( )(10, 20) : " << cmp.operator( )(10, 20) << endl; //명시적 호출
-cout << "Equal( )(10, 10) : " << Equal()(10, 10) << endl; //임시 객체를 통한 호출
+    Equal cmp;  // Equal 클래스 객체 생성
+
+    // 묵시적 함수 호출 연산자 호출: cmp(5,5) → cmp.operator()(5,5)
+    cout << "equal(5, 5) : " << cmp(5, 5) << endl;  
+
+    // 명시적으로 함수 호출 연산자 호출
+    cout << "cmp.operator()(10, 20) : " << cmp.operator()(10, 20) << endl;  
+
+    // 임시 객체를 만들어 함수 호출 연산자 호출
+    cout << "Equal()(10, 10) : " << Equal()(10, 10) << endl;
+
+    return 0;  // 정상 종료
 }
