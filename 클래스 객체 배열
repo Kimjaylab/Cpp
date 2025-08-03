@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x;
+int y;
+public:
+void SetXY(int a, int b) {
+x = a;
+y = b;
+}
+void Print( ) {
+cout << "(" << x << ", " << y << ")" << endl;
+}
+};
+
+void main(void)
+{
+CPoint po[5];
+for (int i = 0; i < 5; i++)
+po[i].SetXY(i + 1, i + 1);
+for (int i = 0; i < 5; i++)
+po[i].Print( );
+}
