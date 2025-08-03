@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x;
+int y;
+public:
+void SetXY(int a, int b) {
+x = a;
+y = b;
+}
+void Print( ) {
+cout << "(" << x << ", " << y << ")"
+<< endl;
+}
+};
+
+void swap(CPoint& po1, CPoint& po2)
+{
+CPoint temp = po1;
+
+po1 = po2;
+po2 = temp;
+}
+
+void main(void)
+{
+CPoint p1, p2;
+
+p1.SetXY(1, 2);
+p2.SetXY(3, 4);
+
+swap(p1, p2);
+
+p1.Print( );
+p2.Print( );
+}
