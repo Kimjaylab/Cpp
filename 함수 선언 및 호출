@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int sum(int x, int y); //함수 프로토타입 선언, int sum(int, int);
+void main(void)
+{
+cout << sum(1, 2) << endl;
+}
+int sum(int x, int y) //함수 정의
+{
+int z = x + y;
+return z;
+}
