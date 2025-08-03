@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+class AAA
+{
+public:
+AAA( ) {
+cout << "AAA( ) called" << endl;
+}
+AAA(int i) {
+cout << "AAA(int i) called”<<endl;
+}
+AAA(const AAA& a) {
+cout << "AAA(const AAA &a) called" << endl;
+}
+};
+
+int main(void)
+{
+AAA obj1;
+AAA obj2(10);
+AAA obj3(obj2);
+return 0;
+}
