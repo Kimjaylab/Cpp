@@ -1,12 +1,22 @@
-#include <iostream>
-#include <conio.h> //getch함수
-using namespace std;
-int main(void)
+void main(void)
 {
 int ch;
-while ((ch = getch( )) != 'q')
+
+while ((ch = getKey( )) != KEY_ESC)
 {
-cout << (char)ch;
+switch (ch) {
+case KEY_RIGHT:
+cout << "Key Right" << endl;
+break;
+case KEY_LEFT:
+cout << "Key Left" << endl;
+break;
+case KEY_UP:
+cout << "Key Up" << endl;
+break;
+case KEY_DOWN:
+cout << "Key Down" << endl;
+break;
 }
-return 0;
+}
 }
