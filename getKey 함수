@@ -1,0 +1,15 @@
+#include<iostream>
+#include<conio.h> //getch함수
+using namespace std;
+#define KEY_ESC 27
+#define KEY_UP (256 + 72)
+#define KEY_DOWN (256 + 80)
+#define KEY_LEFT (256 + 75)
+#define KEY_RIGHT (256 + 77)
+int getKey(void)
+{
+int ch = getch( ); //방향키는 224로 입력됨.
+if (ch == 0 || ch == 224)
+ch = 256 + getch( ); //한 더 읽어서 키 값을 확인함
+return ch;
+}
