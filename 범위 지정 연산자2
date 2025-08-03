@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+namespace NamespaceB {
+class ClassB {
+public:
+int x;
+};
+}
+namespace NamespaceC {
+using namespace NamespaceB;
+}
+void main(void)
+{
+NamespaceB::ClassB bb;//namespace 멤버 식별
+NamespaceC::ClassB cb;//지시문에서 멤버의 네임스페이스를 지명하는 네임스페이스 식별
+bb.x = 3;
+cb.x = 4;
+cout << bb.x << ' ' << cb.x << endl;
+}
