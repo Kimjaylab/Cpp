@@ -1,17 +1,29 @@
-#include <fstream>
-#include <iostream>
-#include <string>
+#include <fstream>   // 파일 입출력 스트림 사용
+#include <iostream>  
+#include <string>    
 
 using namespace std;
 
 int main(void)
 {
-//파일 쓰기준비
-ofstream out("test.txt", ios::app);
+    // 파일 쓰기 준비: "test.txt" 파일을 append(추가) 모드로 연다
+    ofstream out("test.txt", ios::app);
 
-if (out.is_open( ))
-{
-out <<"열심히..";
+    // 파일이 정상적으로 열렸는지 확인
+    if (out.is_open())
+    {
+        // 파일에 문자열 "열심히.." 추가 쓰기
+        out << "열심히..";
+    }
+    else
+    {
+        // 파일 열기 실패 시 에러 메시지 출력
+        cout << "파일 열기 실패!" << endl;
+    }
+
+    // 파일 닫기 (ofstream 객체 소멸 시 자동으로 닫히긴 하지만 명시적 호출 가능)
+    out.close();
+
+    return 0;
 }
-return 0;
-}
+
