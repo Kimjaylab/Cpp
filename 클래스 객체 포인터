@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x;
+int y;
+public:
+void SetXY(int a, int b) {
+x = a;
+y = b;
+}
+void Print() {
+cout << "(" << x << ", " << y << ")"
+<< endl;
+}
+};
+
+void main(void)
+{
+int count;
+
+CPoint* pPo;
+cout << “object number ? ";
+cin >> count;
+pPo = new CPoint[count];
+
+CPoint* pTemp = pPo;
+for (int i = 0; i < count; i++) {
+pTemp->SetXY(i + 1, i + 1);
+pTemp++;
+}
+
+pTemp = pPo;
+for (int i = 0; i < Count; i++) {
+pTemp->Print( );
+pTemp++;
+}
+delete[ ] pPo;
+}
