@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(void)
+{
+    int n;                                      // 배열 크기를 저장할 변수
+    vector<vector<int>> arr;                    // 2차원 벡터 선언
+
+    cout << "배열 크기 입력 :";                 
+    cin >> n;                                   // 사용자로부터 배열 크기 입력 받음
+
+    for (int i = 0; i < n; i++)
+    {
+        vector<int> element(n);                 // 크기 n의 벡터 생성
+        arr.push_back(element);                 // arr에 추가하여 2차원 벡터 구성
+    }
+
+    cout << arr.size() << endl;                 // arr의 행 크기 출력 (n)
+
+    for (int i = 0; i < n; i++)                 
+    {
+        for (int j = 0; j < n; j++)
+        {
+            arr[i][j] = n;                      // 모든 요소에 n 값 저장
+        }
+    }
+
+    for (int i = 0; i < n; i++)                 
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << arr[i][j] << " ";           // 2차원 배열 출력
+        }
+        cout << endl;
+    }
+
+    cout << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        arr[i].clear();                         // 각 행의 요소 제거
+        cout << arr[i].size() << " ";           // 각 행의 크기 출력 (0)
+    }
+
+    cout << endl;
+
+    arr.clear();                                // 2차원 벡터 전체 제거
+    cout << arr.size() << endl;                 // 전체 벡터 크기 출력 (0)
+
+    return 0;
+}
