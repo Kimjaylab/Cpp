@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x, y;
+public:
+CPoint(int a, int b) : x(a), y(b) { }
+CPoint& MoveX(int a) { x += a; return (*this); }
+CPoint& MoveY(int b) { y += b; return (*this); }
+void Print( ) { cout << "(" << x << ", " << y << ")" << endl; }
+};
+
+void main(void)
+{
+CPoint P1(1, 2);
+P1.MoveX(3); //MoveX함수, MoveY함수 호출 결과가 다시 P1 그 자체임
+P1.MoveY(4);
+P1.Print( );
+}
