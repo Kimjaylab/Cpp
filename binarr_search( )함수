@@ -1,25 +1,28 @@
 #include <iostream>
-#include <algorithm>
+#include <algorithm>  // sort, binary_search 함수 포함
 using namespace std;
 
 int main(void)
 {
-int a[10] = { 17, 25, 67, 84, 90, 30, 55, 6, 9, 28 };
-sort(a, a + 10);
-cout << "55: ";
+    // 배열 a를 초기화
+    int a[10] = { 17, 25, 67, 84, 90, 30, 55, 6, 9, 28 };
 
-if (binarr_search(a, a + 10, 55))
-cout <<"find." << endl;
+    // 배열을 오름차순으로 정렬 (binary_search 사용을 위해 필수)
+    sort(a, a + 10);
 
-else
-cout << "not find" << endl;
-cout << "80: ";
+    // 55가 배열에 있는지 이진 탐색
+    cout << "55: ";
+    if (binary_search(a, a + 10, 55))
+        cout << "find." << endl;
+    else
+        cout << "not find" << endl;
 
-if (binarr_search(a, a + 10, 80))
-cout << "find" << endl;
+    // 80이 배열에 있는지 이진 탐색
+    cout << "80: ";
+    if (binary_search(a, a + 10, 80))
+        cout << "find" << endl;
+    else
+        cout << "not find" << endl;
 
-else
-cout << "not find" << endl;
-
-return 0;
+    return 0;
 }
