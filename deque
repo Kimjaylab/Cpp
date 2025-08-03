@@ -1,0 +1,45 @@
+#include <iostream>
+#include <deque>
+#include <string>
+using namespace std;
+
+int main(void)
+{
+    deque<int> dq;
+
+    for (int i = 0; i < 5; i++)
+    {
+        dq.push_back((i + 1) * 10);  // 10, 20, 30, 40, 50을 덱에 뒤에서부터 삽입
+    }
+
+    deque<int>::iterator iter;  // iterator 선언
+
+    cout << "입력값 : ";
+    for (iter = dq.begin(); iter != dq.end(); iter++)
+    {
+        cout << *iter << " ";  // 덱의 현재 요소 출력
+    }
+    cout << endl;
+
+    cout << "push_front & end : ";
+    dq.push_front(1);   // 덱 앞에 1 삽입
+    dq.push_front(2);   // 덱 앞에 2 삽입
+    dq.push_back(100);  // 덱 뒤에 100 삽입
+    dq.push_back(200);  // 덱 뒤에 200 삽입
+
+    for (iter = dq.begin(); iter != dq.end(); iter++)
+    {
+        cout << *iter << " ";  // 삽입 후의 전체 덱 출력
+    }
+    cout << endl;
+
+    cout << "reverse_iterator : ";
+    deque<int>::reverse_iterator rIter;
+    for (rIter = dq.rbegin(); rIter != dq.rend(); rIter++)
+    {
+        cout << *rIter << " ";  // 덱을 역순으로 출력
+    }
+    cout << endl;
+
+    return 0;
+}
