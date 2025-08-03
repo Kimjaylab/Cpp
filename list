@@ -1,0 +1,59 @@
+#include<iostream>
+#include<list>
+#include<string>
+using namespace std;
+
+// 100과 200 사이의 값이면 true를 반환하는 조건자 함수                     // predicate 함수 정의
+bool predicate(int num)
+{
+    return num >= 100 && num <= 200;                                       // 100 이상 200 이하이면 true
+}
+
+int main(void)
+{
+    list<int> lt;                                                          // 정수형 리스트 선언
+
+    // 리스트에 값 삽입
+    lt.push_back(10);
+    lt.push_back(20);
+    lt.push_back(108);
+    lt.push_back(60);
+    lt.push_back(10);
+    lt.push_back(100);
+    lt.push_back(40);
+    lt.push_back(50);
+    lt.push_back(10);
+    lt.push_back(109);
+    lt.push_back(30);
+    lt.push_back(220);
+    lt.push_back(10);
+
+    list<int>::iterator iter;
+
+    cout << "입력값: ";                                                    // 입력값 출력
+    for (iter = lt.begin(); iter != lt.end(); iter++)
+    {
+        cout << *iter << " ";                                              // 리스트 원소 출력
+    }
+    cout << endl << endl;
+
+    lt.remove_if(predicate);                                               // 조건자에 따라 100~200 사이 원소 제거
+
+    cout << "결과1: ";                                                     // 조건자 제거 후 결과 출력
+    for (iter = lt.begin(); iter != lt.end(); iter++)
+    {
+        cout << *iter << " ";                                              // 리스트 원소 출력
+    }
+    cout << endl << endl;
+
+    lt.remove(10);                                                         // 값이 10인 원소 모두 제거
+
+    cout << "결과2: ";                                                     // 10 제거 후 결과 출력
+    for (iter = lt.begin(); iter != lt.end(); iter++)
+    {
+        cout << *iter << " ";                                              // 리스트 원소 출력
+    }
+    cout << endl << endl;
+
+    return 0;
+}
