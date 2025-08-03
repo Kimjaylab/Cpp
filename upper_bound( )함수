@@ -5,11 +5,12 @@ using namespace std;
 
 int main(void)
 {
-int a[10] = { 17, 25, 67, 84, 90, 30, 55, 6, 9, 28 };
-sort(a, a + 10);
+    int a[10] = { 17, 25, 67, 84, 90, 30, 55, 6, 9, 28 };
+    sort(a, a + 10);  // 배열 a를 오름차순 정렬
 
-cout << "upper bound 55: " << *upper_bound(a, a + 10, 55) << endl;
-cout << "upper bound 80: " << *upper_bound(a, a + 10, 80) << endl;
+    // upper_bound 함수는 정렬된 범위 내에서 주어진 값보다 큰 값 중 가장 작은 위치를 반환
+    cout << "upper bound 55: " << *upper_bound(a, a + 10, 55) << endl;
+    cout << "upper bound 80: " << *upper_bound(a, a + 10, 80) << endl;
 
-return 0;
+    return 0;
 }
