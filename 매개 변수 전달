@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int sum(int x, int y)
+{
+int z;
+x = x + 3;
+y = y + 3
+z = x + y;
+return z;
+}
+void main(void)
+{
+int a = 3, b = 4;
+cout << sum(a, b) << endl;
+}
