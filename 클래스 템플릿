@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class Data {
+T data;
+public:
+Data(T d);
+void setData(T d);
+T getData();
+};
+
+template <typename T>
+Data<T> ::Data(T d) {
+data = d;
+}
+
+template <typename T>
+void Data<T> ::setData(T d) {
+data = d;
+}
+
+template <typename T>
+T Data<T> ::getData( ) {
+return data;
+}
+
+int main(void)
+{
+// Data d1(0);
+Data<int> d1(0);
+d1.setData(10);
+
+Data<char> d2('a');
+
+cout << d1.getData( ) << endl;
+cout << d2.getData( ) << endl;
+
+return 0;
+}
