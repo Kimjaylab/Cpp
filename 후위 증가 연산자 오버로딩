@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+class CPoint {
+private:
+int x, y;
+public:
+CPoint(int a = 0, int b = 0) : x(a), y(b) { }
+void Print( ) { cout << "(" << x << ", " << y << ")" << endl; }
+CPoint operator++(int) {
+CPoint temp = (*this);
+++x;
+++y;
+return temp;
+}
+};
+
+void main(void)
+{
+CPoint P1(3, 4);
+CPoint P2 = P1++; //P1.operator++(0)
+P1.Print( );
+P2.Print( );
+}
