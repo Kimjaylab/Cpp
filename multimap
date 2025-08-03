@@ -1,0 +1,45 @@
+#include<iostream>                 // 입출력 스트림을 사용하기 위한 헤더
+#include<map>                      // map과 multimap 컨테이너 사용을 위한 헤더
+using namespace std;
+
+int main(void)
+{
+    multimap<int, int> mm;          // int형 키와 int형 값을 저장하는 multimap 선언, 키 중복 허용
+
+    // multimap에 (키, 값) 쌍을 삽입
+    mm.insert(pair<int, int>(60, 6));   // 키 60, 값 6 삽입
+    mm.insert(pair<int, int>(30, 3));   // 키 30, 값 3 삽입
+    mm.insert(pair<int, int>(70, 7));   // 키 70, 값 7 삽입
+    mm.insert(pair<int, int>(90, 9));   // 키 90, 값 9 삽입
+    mm.insert(pair<int, int>(40, 4));   // 키 40, 값 4 삽입
+    mm.insert(pair<int, int>(20, 2));   // 키 20, 값 2 삽입
+    mm.insert(pair<int, int>(50, 5));   // 키 50, 값 5 삽입
+    mm.insert(pair<int, int>(80, 8));   // 키 80, 값 8 삽입
+
+    multimap<int, int>::iterator iter;  // multimap을 순회할 반복자 선언
+
+    cout << "mm.size( ) : " << mm.size() << endl;     // 현재 multimap에 저장된 원소 개수 출력
+    cout << "mm.count(40) : " << mm.count(40) << endl; // 키가 40인 원소의 개수 출력 (현재는 1개)
+
+    // multimap 내 모든 (키, 값) 쌍을 출력
+    for (iter = mm.begin(); iter != mm.end(); iter++)
+    {
+        cout << "[" << (*iter).first << ", " << iter->second << "] "; // 반복자가 가리키는 원소의 키와 값 출력
+    }
+    cout << endl << endl;
+
+    // 키 40에 대해 중복된 값 추가 가능 (multimap의 특징)
+    mm.insert(pair<int, int>(40, 44));   // 키 40, 값 44 추가 삽입
+    mm.insert(pair<int, int>(40, 3));    // 키 40, 값 3 추가 삽입
+
+    cout << "mm.size( ) : " << mm.size() << endl;       // 추가 삽입 후 전체 원소 개수 출력 (기존 + 2)
+    cout << "mm.count(40) : " << mm.count(40) << endl;   // 키 40에 해당하는 원소 개수 출력 (기존 1개에서 3개로 증가)
+
+    // 다시 multimap 모든 원소 출력
+    for (iter = mm.begin(); iter != mm.end(); iter++)
+    {
+        cout << "[" << iter->first << ", " << iter->second << "] "; // 키, 값 쌍 출력
+    }
+
+    return 0;  // 프로그램 정상 종료
+}
